@@ -1,14 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { GifList } from "../../components/gif-list/gif-list";
+import { Gifs } from '../../services/gifs';
 
-@Component({
-  selector: 'app-trending',
-  imports: [GifList],
-  templateUrl: './trending.html',
-  styleUrl: './trending.css'
-})
-export default class Trending {
-  imageUrls: string[] = ([
+const imageUrls: string[] = ([
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg",
@@ -22,4 +16,15 @@ export default class Trending {
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-10.jpg",
     "https://flowbite.s3.amazonaws.com/docs/gallery/square/image-11.jpg"
   ]);
+@Component({
+  selector: 'app-trending',
+  imports: [GifList],
+  templateUrl: './trending.html',
+  styleUrl: './trending.css'
+})
+export default class Trending {
+  gifService = inject(Gifs)
+  // gifs = signal(imageUrls)
+
+
 }
