@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Sidebarmenu } from "../../components/sidebarmenu/sidebarmenu";
 import { NgClass } from '@angular/common';
@@ -10,10 +10,10 @@ import { NgClass } from '@angular/common';
   styleUrl: './dashboard.css'
 })
 export default class Dashboard {
-  isMenuOpen = false;
+  isMenuOpen = signal(false);
 
   toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
+    this.isMenuOpen.update((isOpen) => !isOpen);
   }
 
 }
