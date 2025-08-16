@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Sidebarmenu } from "../../components/sidebarmenu/sidebarmenu";
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [RouterOutlet, Sidebarmenu],
+  imports: [RouterOutlet, Sidebarmenu, NgClass],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })
