@@ -14,6 +14,8 @@ export default class Search {
   gifs = signal<Gif[]>([])
 
   onSearch(query: string) {
+    console.log(query)
+    // return
     this.gifsService.loadSearchGifs(query).subscribe((resp) => {
       this.gifs.set(resp)
     })

@@ -4,14 +4,20 @@
     Buscar gifs por nombre, descripción o tags
   </h3>
 
-  <section class="flex flex-col gap-4 mr-2">
+  <section class="flex w-full gap-4">
     <input
       type="text"
       placeholder="Buscar gifs"
-      class="mt-3 border border-gray-300 p-2"
-      (keyup.enter)="onSearch(txtSearch.value)"
+      class="mt-3 border border-gray-300 p-2 flex-grow"
       #txtSearch
     />
+    <button
+      class="mt-3 rounded-md bg-slate-800 p-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 cursor-pointer"
+      (click)="onSearch(txtSearch.value)"
+      type="button"
+    >
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </button>
   </section>
 
   <section class="my-2">
