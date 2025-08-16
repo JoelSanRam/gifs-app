@@ -9,5 +9,10 @@ import { Sidebarmenu } from "../../components/sidebarmenu/sidebarmenu";
   styleUrl: './dashboard.css'
 })
 export default class Dashboard {
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
 }
